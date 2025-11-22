@@ -1,48 +1,43 @@
 # data_consultant_ai
-csv, excel 파일 데이터를 업로드하면 EDA, 진단 , 전처리 방법 , 분석 방법론을 자동으로 추천하는 AI 컨설턴트 
+csv, excel 파일 데이터를 업로드하면 EDA, 진단 , 전처리 방법 , 분석 방법론을 자동으로 추천하는 AI 컨설턴트 (데모 버전 EDA 진단 까지 구현 11_22기준)
 https://demoversion1121.streamlit.app/
 
 
 
 ## 🌟 Features
 
-- **File Upload Support:**
-  - Supports multiple file formats (CSV, Excel, JSON, TXT)
-  - Automatic file type detection and processing
+- **파일 업로드:**
+  - 2가지 데이터 타입 지원 (CSV, Excel)
 
-- **Basic Information:**
-  - Dataset shape and size
-  - Preview of first and last few rows
-  - Detailed information about data types and memory usage
+- **데이터 미리보기:**
+  - 데이터 행과 열의 수 확인 및 첫 10개행을 출력하여 데이터 1차 확인
+  - 메모리 사용량 출력 
 
-- **Missing Values Analysis:**
-  - Detection of missing values
-  - Visual representation of missing value distribution
-  - Percentage of missing values per column
+- **데이터 전체정보:**
+  - 컬럼별 데이터 타입 확인 및 고윳값 갯수 확인 
+  - 컬럼별 결측치 갯수 확인
 
-- **Categorical Data Analysis:**
-  - Frequency tables
-  - Bar charts and pie charts
-  - Distribution visualization for categorical variables
+- **변수 타입 구분:**
+  - 수치형, 명목형으로 데이터를 1차적으로 구분하여 목록 표기 
 
-- **Numerical Data Analysis:**
-  - Statistical summaries
-  - Distribution plots (histograms with density curves)
-  - Box plots for understanding data spread
+- **변수 분석:**
+  - 수치형 변수 : 기술통계 , 왜도 및 첨도 분석 , 분포 시각화 (히스토그램 , 박스플롯)
+  - 명목형 변수 : 고유값 갯수 및 빈도표 제공
 
-- **Outlier Analysis:**
-  - Detection of outliers using IQR method
-  - Visual representation through box plots
-  - Outlier statistics and percentages
+- **상관관계 분석:**
+  - 전체 변수 중 선택한 변수들간의 상관관계(피어슨 상관계수 기반)
+  - 상관관계 히트맵 제공 및 매트릭스 제공
 
-- **Bivariate Analysis:**
-  - Relationship analysis between two variables
-  - Different plot types based on data types:
-    - Numerical vs Numerical: Scatter plots with correlation
-    - Numerical vs Categorical: Box plots
-    - Categorical vs Categorical: Grouped bar charts
+- **이상치 탐지 및 분석:**
+  - IQR 방법 , Z-score 방법 기반 선택 가능 
+  - 변수별 이상치 비율 시각화 제공
+  - 이상치 포함된 변수의 분포 시각화 제공 
 
-- **Multivariate Analysis:**
-  - Correlation matrix heatmap
-  - Detailed correlation values
-  - Pair plots for numerical variables
+- **결측치 상세분석:**
+  - 결측치를 의미하는 NaN, Na 문자열 탐지 하여 각각 갯수 표시 
+  - 빈문자열 및 공백 문자열도 데이터가 없는 상태이므로 결측치로 판단하여 따로 갯수 표시
+  - 결측치가 존재하는 변수 별 결측 비율(%) 제공
+  - 결측치 시각화로 컬럼별 결측치가 존재하는 갯수 표시
+
+- **데이터 품질 리포트:**
+## 🌟 Features
